@@ -1,6 +1,6 @@
 <form method="post" {{ $attributes->merge(['action' => '#', 'class' => 'form-horizontal']) }}>
-    @csrf
-    @method('patch')
+  @csrf
+  @method('patch')
 
-    {{ $slot }}
+  {{ $slot }}
 </form>

@@ -1,4 +1,5 @@
-<x-forms.patch :action="route('frontend.user.profile.update')">
+<x-forms.patch_enctype :action="route('frontend.user.profile.update')">
+
   <div class="form-group row">
     <label for="name" class="col-md-3 col-form-label text-md-right">@lang('Name')</label>
 
@@ -23,13 +24,18 @@
   <div class="form-group row">
     <label for="avatar" class="col-md-3 col-form-label text-md-right">@lang('Avatar')</label>
 
-    <div class="col-md-9">
-      <input type="text" name="avatar" class="form-control" placeholder="{{ __('Avatar') }}"
-        value="{{ old('avatar') ?? $logged_in_user->avatar_path }}" required autofocus autocomplete="avatar" />
+    <div class="col-md-6">
+      <input type="file" name="avatar" value="{{ $logged_in_user->avatar_path }}" class="form-control">
+    </div>
+    <div class="col-md-3">
+      @isset($logged_in_user->avatar_path)
+        <img src="/storage/avatars/{{ $logged_in_user->avatar_path }}" alt=":(" width="100" height="100"
+          class="img-thumbnail img-fluid">
+
+      @endisset
     </div>
   </div>
   <!--foto-->
-
 
   @if ($logged_in_user->canChangeEmail())
     <div class="form-group row">
@@ -54,4 +60,4 @@
     </div>
   </div>
   <!--form-group-->
-</x-forms.patch>
+  </x-forms.patch>
