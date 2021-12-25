@@ -1,6 +1,19 @@
 <?php
 
 use Carbon\Carbon;
+use phpDocumentor\Reflection\Types\Boolean;
+
+if (! function_exists('appSistema')) {
+    /**
+     * Helper to grab the application name.
+     *
+     * @return mixed
+     */
+    function appSistema()
+    {
+        return config('app.Sistema', 'Guzanet');
+    }
+}
 
 if (! function_exists('appName')) {
     /**
@@ -46,7 +59,27 @@ if (! function_exists('homeRoute')) {
                 return 'frontend.user.dashboard';
             }
         }
-
         return 'frontend.index';
+    }
+}
+
+if (! function_exists('viewDashboard')) {
+    /**
+     * Return if view Dashboard.
+     *
+     * @return Boolean
+     */
+    function viewDashboard()
+    {
+        if (auth()->check()) {
+            // if (auth()->user()->isAdmin()) {
+            //     return true;
+            // }
+
+            // if (auth()->user()->isUser()) {
+            return true;
+            // }
+        }
+        return false;
     }
 }
