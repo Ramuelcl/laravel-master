@@ -1,7 +1,7 @@
 <footer class="c-footer">
   <div>
     <strong>
-      @lang('Copyright') &copy; {{ date('m.Y') }},
+      @lang('Copyright') &copy; {{ date('Y.m') }},
       <x-utils.link href="mailto:ramuelcl@gmail.com" target="_blank" :text="__(appName())" />
     </strong>
 

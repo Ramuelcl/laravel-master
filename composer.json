@@ -101,5 +101,11 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "sniff": [
+        "./vendor/bin/php-cs-fixer fix -vvv --dry-run --show-progress=dots"
+    ],
+    "lint": [
+        "./vendor/bin/php-cs-fixer fix -vvv --show-progress=dots"
+    ]
 }

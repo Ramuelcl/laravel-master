@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -28,5 +29,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
+        // De forma predeterminada, Blade (y el asistente de Laravel ) codificarán dos veces las entidades HTML. Si desea deshabilitar la codificación doble, llame al Blade::withoutDoubleEncoding método desde el boot método de su AppServiceProvider:
+        Blade::withoutDoubleEncoding();
     }
 }

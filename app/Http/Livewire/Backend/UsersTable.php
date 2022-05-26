@@ -100,7 +100,8 @@ class UsersTable extends DataTableComponent
             Column::make(__('Type'))
                 ->sortable(),
             Column::make(__('Name'))
-                ->sortable(),            Column::make(__('Prename'))
+                ->sortable(),
+            Column::make(__('Prename'))
                 ->sortable(),
             Column::make(__('E-mail'), 'email')
                 ->sortable(),

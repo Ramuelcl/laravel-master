@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'sistema'=>'Guzanet',
+    'autor'=>'Ramuel González',
+    // 'vers'=>carbon(time(), 'Y').'.1',
+    'vers'=>'1.1',
+    //
+    'meta_description'=>'blog cuentas',
 
     /*
     |--------------------------------------------------------------------------
